@@ -21,6 +21,10 @@ export default function Home() {
     try {
       const result = await db.getAllAsync<Transaction>(`SELECT * FROM Transactions ORDER BY date DESC;`);
       setTransactions(result);
+
+      const categoriesResult = await db.getAllAsync<Category>(`SELECT * FROM Categories;`);
+      setCategories(categoriesResult);
+      
     } catch (error) {
       Alert.alert("Database", "Unable to get data");
       console.log(error);
