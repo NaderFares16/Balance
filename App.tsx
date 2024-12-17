@@ -1,10 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Loading } from './components/loading';
+import * as React from 'react';
 
 import * as FileSystem from 'expo-file-system';
 import { Asset } from 'expo-asset';
-import * as React from 'react';
+import { SQLiteProvider } from 'expo-sqlite';
+
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+
+import Home from './src/app/Home';
+import { Loading } from './src/components/loading';
+
+const Stack = createNativeStackNavigator();
 
 const loadDatabase = async () => {
   const dbName = "database.db";
@@ -37,18 +43,21 @@ export default function App() {
   if (!dbLoaded) return <Loading />
 
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <React.Suspense>
+        <SQLiteProvider databaseName='database.db' useSuspense>
+          <Stack.Navigator>
+            <Stack.Screen 
+              name='Home'
+              component={Home}
+              options={{
+                headerTitle: "Balance",
+                headerLargeTitle: true,
+              }}
+            />
+          </Stack.Navigator>
+        </SQLiteProvider>
+      </React.Suspense>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
