@@ -44,7 +44,11 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <React.Suspense>
+      <React.Suspense
+        fallback={
+          <Loading />
+        }
+      >
         <SQLiteProvider databaseName='database.db' useSuspense>
           <Stack.Navigator>
             <Stack.Screen 
