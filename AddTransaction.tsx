@@ -96,7 +96,7 @@ export default function AddTransaction({
               style={{ marginBottom: 15 }}
               onChangeText={setDescription}
             />
-            <Text style={{ marginBottom: 6 }}>Select a entry type</Text>
+            <Text style={{ marginBottom: 6 }}>Select a entry type:</Text>
             <SegmentedControl
               values={["Expense", "Income"]}
               style={{ marginBottom: 15 }}
@@ -117,9 +117,7 @@ export default function AddTransaction({
               />
             ))}
           </Card>
-          <View
-            style={{ flexDirection: "row", justifyContent: "space-around" }}
-          >
+          <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: 10, }}>
             <Button
               title="Cancel"
               color="red"
@@ -186,7 +184,7 @@ function AddButton({ setIsAddingTransaction }: {
       onPress={() => setIsAddingTransaction(true)}
       activeOpacity={0.8}
       style={{
-        height: 40,
+        height: 48,
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",

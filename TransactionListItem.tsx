@@ -24,17 +24,13 @@ export default function TransactionItem({ transaction, categoryInfo }: Transacti
 
   return (
     <Card>
-      <View style={s.row}>
+      <View style={s.containerView}>
         <View style={{ flex: 1, width: "40%", gap: 10, justifyContent: "space-between" }}>
           <Amount amount={transaction.amount} color={color} iconName={iconName} />
-            <CategoryItem 
-              categoryColor={categoryColor}
-              categoryInfo={categoryInfo}
-              emoji={emoji}
-            />
-          </View>
-          <TransactionInfo date={transaction.date} description={transaction.description} id={transaction.id} />
+          <CategoryItem categoryColor={categoryColor} categoryInfo={categoryInfo} emoji={emoji} />
         </View>
+        <TransactionInfo date={transaction.date} description={transaction.description} id={transaction.id} />
+      </View>
     </Card>
   )
 }
@@ -96,16 +92,21 @@ const s = StyleSheet.create({
     fontSize: 32,
     fontWeight: "800",
   },
+  containerView: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 16,
+  },
   row: {
     flexDirection: "row",
     alignItems: "center",
     gap: 6,
   },
   categoryContainer: {
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    paddingVertical: 3,
-    alignSelf: "flex-start",
+    paddingHorizontal: 6,
+    paddingVertical: 8,
+    borderRadius: 8,
+    alignItems: "center"
   },
   categoryText: {
     fontSize: 12,
