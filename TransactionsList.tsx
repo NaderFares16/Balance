@@ -12,7 +12,7 @@ export default function TransactionList({
   deleteTransaction: (id: number) => Promise<void>;
 }) {
   return(
-    <View>
+    <View style={{ gap: 16, }}>
       {transactions.map((transaction) => {
 
         const categoryForCurrentItem = categories.find(
