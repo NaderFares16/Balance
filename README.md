@@ -1,6 +1,6 @@
 # Balance
 
-[Balance App](./assets/branding.svg)
+![Balance App](./assets/branding.svg)
 
 > **Your finances, simplified.**
 > A modern iOS app for effortless expense tracking and budget management.
@@ -46,9 +46,9 @@
 
 ## 🖼️ Screenshots
 
-| Home Screen | Transaction Details | Charts Overview |
+| Home Screen | Transaction Details | Categories Overview |
 | ----------- | ------------------- | --------------- |
-|             |                     |                 |
+| ![Home Screen](./docs/HomeScreen.svg) | ![Home Screen](./docs/TransactionsDashboard.svg)|![Home Screen](./docs/Categories.svg)|
 
 ---
 
