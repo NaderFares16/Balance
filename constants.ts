@@ -22,6 +22,6 @@ export const categoryEmojies: { [key: string]: string } = {
   Salary: "💰",
   Bonus: "🎊",
   Default: "🫰🏼",
-  Health: "❣️",
+  Health: "❤️",
   Bills: "💳",
 };
